@@ -9,6 +9,15 @@ public class Bard : Characters
 
     public override void Attack()
     {
-        Console.WriteLine($"{Name} the Bard is attacking!");
+        if (EquippedWeapon is not null)
+        {
+            Console.WriteLine(
+                $"{Name} attacks with {EquippedWeapon.Description}: {EquippedWeapon.AttackMessage}, dealing {EquippedWeapon.Damage} damage ..");
+        }
+        else
+        {
+            Console.WriteLine(
+                $"{Name} attack with their bare fists .. dealing minimal damage. I recommend you equip a weapon, traveller.");
+        }
     }
 }

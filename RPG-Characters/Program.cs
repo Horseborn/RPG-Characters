@@ -4,25 +4,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        Trash sebastian = new Trash("Sebastian", 26);
-        Console.WriteLine($"Meine name ist {sebastian.Name} und ich bin {sebastian.Age}");
+        Card_Thrower cardThrower = new Card_Thrower("gambit", "mega nice thrower");
+        Weapon cards = new Cards();
+        cardThrower.EquipWeapon(cards);
+        cardThrower.Attack();
 
-
-        Bard bebe = new Bard("Prayer", "Cool d00d");
-        bebe.Attack();
-        Console.WriteLine($"His name was {bebe.Name} and he was {bebe.Description}");
+        Fjøsnisse fjøsnisse = new Fjøsnisse("Jørn", "Curd Mage");
+        Cheese_Wheel_Shield shield = new Cheese_Wheel_Shield();
+        fjøsnisse.EquipWeapon(shield);
+        fjøsnisse.Attack();
     }
 }
 
-class Trash
-{
-    public string Name { get; private set; }
-    public int Age { get; private set; }
 
-
-    public Trash(string name, int age)
-    {
-        Name = name;
-        Age = age;
-    }
-}
